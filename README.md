@@ -1,7 +1,7 @@
-# Earthquake Exposure Project
+# Earthquake Exposure Analysis
 
-This assignment for the Science Programming course.
-The goal is to calculate seismic risk for major cities.
+**Authors:** Surya Jamuna Rani Subramanian & Govindharajulu Ramachandran  
+**Course:** Scientific Programming for Geospatial Sciences (Assignment 1)
 
 ## Structure
 - `src/`: Python source code
@@ -19,6 +19,7 @@ This project uses Poetry for dependency management.
    ```
 
 2. Install dependencies:
+
    ```bash
    poetry install
    ```
@@ -26,7 +27,9 @@ This project uses Poetry for dependency management.
 ## How to Run
 
 ### 1. Interactive Analysis (Jupyter Notebook)
+
 The main analysis and visualizations are in the notebook.
+
 ```bash
 poetry run jupyter notebook notebooks/exploration.ipynb
 ```
