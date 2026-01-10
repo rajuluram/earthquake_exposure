@@ -33,7 +33,7 @@ def get_earthquake_data(days_back=30, min_mag=5.0):
         return gpd.GeoDataFrame()
 
 def get_cities_data():
-    """Load cities from Natural Earth dataset"""
+    """Load cities from Natural Earth dataset (Asia only)"""
     if not os.path.exists(CACHE_FOLDER):
         os.makedirs(CACHE_FOLDER)
         
@@ -47,6 +47,24 @@ def get_cities_data():
         print("Downloading cities...")
         cities = gpd.read_file(url)
         cities = cities[cities['pop_max'] > 100000].copy()
+        
+        # Filter for Asian countries only
+        asian_countries = [
+            'Afghanistan', 'Armenia', 'Azerbaijan', 'Bahrain', 'Bangladesh', 
+            'Bhutan', 'Brunei', 'Cambodia', 'China', 'Georgia', 'India', 
+            'Indonesia', 'Iran', 'Iraq', 'Israel', 'Japan', 'Jordan', 'Kazakhstan',
+            'Kuwait', 'Kyrgyzstan', 'Laos', 'Lebanon', 'Malaysia', 'Maldives',
+            'Mongolia', 'Myanmar', 'Nepal', 'North Korea', 'Oman', 'Pakistan',
+            'Palestine', 'Philippines', 'Qatar', 'Saudi Arabia', 'Singapore',
+            'South Korea', 'Sri Lanka', 'Syria', 'Taiwan', 'Tajikistan', 'Thailand',
+            'Timor-Leste', 'Turkey', 'Turkmenistan', 'United Arab Emirates',
+            'Uzbekistan', 'Vietnam', 'Yemen', 'Russia'
+        ]
+        
+        if 'adm0name' in cities.columns:
+            cities = cities[cities['adm0name'].isin(asian_countries)].copy()
+        elif 'ADM0NAME' in cities.columns:
+            cities = cities[cities['ADM0NAME'].isin(asian_countries)].copy()
         
         if 'pop_max' in cities.columns:
             cities = cities.rename(columns={'pop_max': 'POP_MAX'})
