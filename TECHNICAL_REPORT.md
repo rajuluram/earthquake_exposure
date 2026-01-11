@@ -101,14 +101,14 @@ The main analysis runs in a Jupyter notebook (`exploration.ipynb`).
 - Pandas and NumPy for data processing
 
 ### Visualizations:
-The notebook generates 5 interactive charts with a logical color scheme:
-1. Interactive risk map (dark theme, purple earthquakes, yellow-to-red cities showing risk level)
-2. Top 20 cities bar chart (yellow=low risk, red=high risk)
-3. PGA distribution histogram (orange - matches risk theme)
-4. Risk category pie chart (red=CRITICAL, green=MINIMAL)
-5. PGA attenuation with distance plot (purple shades for different magnitudes)
+The notebook generates 5 interactive charts with scientifically accepted color schemes:
+1. Interactive risk map (light theme, Plasma for earthquakes with 60% opacity, Hot for cities - fully opaque)
+2. Top 20 cities bar chart (Turbo rainbow - all colors visible)
+3. PGA distribution histogram (solid dark blue)
+4. Risk category pie chart (ColorBrewer Set1 - red, orange, yellow, green, blue)
+5. PGA attenuation with distance plot (ColorBrewer Set1 for distinct lines)
 
-We chose these colors because they make sense - red means danger, yellow means caution, and green means safe.
+We made earthquakes semi-transparent and cities larger and solid so you can easily tell them apart on the map. The color bars on the left and right clearly label "Earthquake Magnitude" and "City Risk".
 
 ---
 

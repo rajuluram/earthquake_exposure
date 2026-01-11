@@ -139,7 +139,7 @@ def generate_plotly_map(cities_gdf, eq_gdf, exposure_df, boundaries_gdf=None):
             name='Boundaries'
         ))
 
-    # add earthquakes
+    # add earthquakes - use Plasma (purple to yellow) with lower opacity
     fig.add_trace(go.Scattermapbox(
         lat=eq_df['lat'],
         lon=eq_df['lon'],
@@ -147,40 +147,45 @@ def generate_plotly_map(cities_gdf, eq_gdf, exposure_df, boundaries_gdf=None):
         marker=go.scattermapbox.Marker(
             size=eq_df['mag'] ** 2.5 / 2,
             color=eq_df['mag'],
-            colorscale='Blues',
+            colorscale='Plasma_r',
             cmin=5.0,
             cmax=8.0,
-            opacity=0.7,
+            opacity=0.6,
             showscale=True,
-            colorbar=dict(title="Magnitude", x=0.02, y=0.5, len=0.5)
+            colorbar=dict(title="Earthquake<br>Magnitude", x=0.02, y=0.5, len=0.4)
         ),
-        text=eq_df['hover_text'], hoverinfo='text', name='Earthquakes'
+        text=eq_df['hover_text'], hoverinfo='text', name='Earthquakes (circles)'
     ))
 
-    # add cities
+    # add cities - large bright red circles (distinct from earthquake purple circles)
     fig.add_trace(go.Scattermapbox(
         lat=cities_df['lat'],
         lon=cities_df['lon'],
         mode='markers',
         marker=go.scattermapbox.Marker(
-            size=12, 
-            color=cities_df['max_pga'],
-            colorscale='Reds',
-            showscale=True,
-            cmin=0,
-            cmax=0.5,
-            colorbar=dict(title="Max PGA (g)", x=0.98, len=0.5)
+            size=16,
+            color='#e41a1c',  # bright red
+            opacity=1.0
         ),
-        text=cities_df['hover_text'], hoverinfo='text', name='Cities at Risk'
+        text=cities_df['hover_text'], hoverinfo='text', name='Cities at Risk (red)'
     ))
 
-    # set up the map with light theme
+    # set up the map with light theme and compact legend
     fig.update_layout(
         title="Asian Cities Seismic Risk Analysis (Year 2025)",
         mapbox_style="carto-positron",
         mapbox=dict(center=dict(lat=30, lon=100), zoom=2.5),
         margin={"r":0,"t":50,"l":0,"b":0},
-        height=800
+        height=800,
+        legend=dict(
+            yanchor="top",
+            y=0.99,
+            xanchor="right",
+            x=0.99,
+            bgcolor="rgba(255,255,255,0.8)",
+            bordercolor="gray",
+            borderwidth=1
+        )
     )
 
     
