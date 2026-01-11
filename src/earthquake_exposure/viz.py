@@ -147,7 +147,7 @@ def generate_plotly_map(cities_gdf, eq_gdf, exposure_df, boundaries_gdf=None):
         marker=go.scattermapbox.Marker(
             size=eq_df['mag'] ** 2.5 / 2,
             color=eq_df['mag'],
-            colorscale='Purples',
+            colorscale='Blues',
             cmin=5.0,
             cmax=8.0,
             opacity=0.7,
@@ -165,7 +165,7 @@ def generate_plotly_map(cities_gdf, eq_gdf, exposure_df, boundaries_gdf=None):
         marker=go.scattermapbox.Marker(
             size=12, 
             color=cities_df['max_pga'],
-            colorscale='YlOrRd',
+            colorscale='Reds',
             showscale=True,
             cmin=0,
             cmax=0.5,
@@ -174,15 +174,13 @@ def generate_plotly_map(cities_gdf, eq_gdf, exposure_df, boundaries_gdf=None):
         text=cities_df['hover_text'], hoverinfo='text', name='Cities at Risk'
     ))
 
-    # set up the map with dark theme
+    # set up the map with light theme
     fig.update_layout(
         title="Asian Cities Seismic Risk Analysis (Year 2025)",
-        mapbox_style="carto-darkmatter",
+        mapbox_style="carto-positron",
         mapbox=dict(center=dict(lat=30, lon=100), zoom=2.5),
         margin={"r":0,"t":50,"l":0,"b":0},
-        height=800,
-        paper_bgcolor='rgb(30,30,30)',
-        font=dict(color='white')
+        height=800
     )
 
     

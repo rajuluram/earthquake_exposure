@@ -80,7 +80,7 @@ earthquake_exposure/
 │   ├── interactive_risk_map.html
 │   ├── seismic_risk_results.csv
 │   └── summary_statistics.txt
-└── METHODOLOGY.md        # explains how it works
+└── TECHNICAL_REPORT.md   # explains how it works
 ```
 
 ## Libraries used
