@@ -114,13 +114,13 @@ We made a simple API using FastAPI. It has these endpoints:
 
 ### Visualizations:
 The notebook generates 5 interactive charts with scientifically accepted color schemes:
-1. Interactive risk map (light theme, Plasma for earthquakes with 60% opacity, Hot for cities - fully opaque)
+1. Interactive risk map (light theme, Plasma for earthquakes with 60% opacity, Black for cities with white border)
 2. Top 20 cities bar chart (Turbo rainbow - all colors visible)
 3. PGA distribution histogram (solid dark blue)
 4. Risk category pie chart (ColorBrewer Set1 - red, orange, yellow, green, blue)
 5. PGA attenuation with distance plot (ColorBrewer Set1 for distinct lines)
 
-We made earthquakes semi-transparent and cities larger and solid so you can easily tell them apart on the map. The color bars on the left and right clearly label "Earthquake Magnitude" and "City Risk".
+We made earthquakes semi-transparent and cities distinct (black dots with white borders) so you can easily tell them apart on the map. The color bars on the left and right clearly label "Earthquake Magnitude" and "City Risk".
 
 ---
 

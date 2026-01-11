@@ -157,17 +157,31 @@ def generate_plotly_map(cities_gdf, eq_gdf, exposure_df, boundaries_gdf=None):
         text=eq_df['hover_text'], hoverinfo='text', name='Earthquakes (circles)'
     ))
 
-    # add cities - large bright red circles (distinct from earthquake purple circles)
+    # add cities - white border (background layer)
     fig.add_trace(go.Scattermapbox(
         lat=cities_df['lat'],
         lon=cities_df['lon'],
         mode='markers',
         marker=go.scattermapbox.Marker(
-            size=16,
-            color='#e41a1c',  # bright red
+            size=10,  # slightly larger for border effect
+            color='white',
             opacity=1.0
         ),
-        text=cities_df['hover_text'], hoverinfo='text', name='Cities at Risk (red)'
+        hoverinfo='skip',
+        showlegend=False
+    ))
+
+    # add cities - black center (foreground layer)
+    fig.add_trace(go.Scattermapbox(
+        lat=cities_df['lat'],
+        lon=cities_df['lon'],
+        mode='markers',
+        marker=go.scattermapbox.Marker(
+            size=7,
+            color='black',
+            opacity=1.0
+        ),
+        text=cities_df['hover_text'], hoverinfo='text', name='Cities at Risk (black)'
     ))
 
     # set up the map with light theme and compact legend
