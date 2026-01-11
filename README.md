@@ -30,7 +30,12 @@ curl -sSL https://install.python-poetry.org | python3 -
 
 **Windows (PowerShell):**
 ```powershell
-(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+```
+
+**Important:** After installing, run this line to make the `poetry` command work immediately:
+```powershell
+$env:Path += ";$env:APPDATA\Python\Scripts"
 ```
 
 Then install the project packages:
