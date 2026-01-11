@@ -21,7 +21,12 @@ cd earthquake_exposure
 
 ### 2. Install dependencies
 
-Make sure you have Python 3.10+ and Poetry installed, then:
+First, install Poetry if you don't have it:
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+```
+
+Then install the project packages:
 ```bash
 poetry install
 ```
