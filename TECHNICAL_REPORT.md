@@ -126,13 +126,13 @@ We made earthquakes semi-transparent and cities distinct (black dots with white 
 
 ## 5. Results
 
-We ran the analysis on 1721 cities and 1263 earthquakes from 2025. Here's what we found:
+We ran the analysis on 964 cities (filtered for Asia) and 1263 earthquakes from 2025. Here's what we found:
 
 ### How many cities in each risk category:
 - CRITICAL: 1 city
 - MODERATE: 4 cities
 - LOW: 15 cities
-- MINIMAL: 1701 cities (basically everyone else)
+- MINIMAL: 944 cities (basically everyone else)
 
 Most cities are minimal risk which makes sense - not everywhere has earthquakes nearby.
 
