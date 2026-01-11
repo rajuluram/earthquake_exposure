@@ -2,7 +2,7 @@
 
 **Earthquake Exposure Analysis for Asian Cities**
 
-Surya Jamuna Rani Subramanian & Govindharajulu Ramachandran  
+Surya Jamuna Rani Subramaniyan (S3664414) & Govindharajulu Ramachandran (S3582361)  
 Scientific Programming for Geospatial Sciences  
 January 2026
 

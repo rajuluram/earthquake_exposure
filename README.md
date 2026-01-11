@@ -70,4 +70,5 @@ earthquake_exposure/
 
 ## Authors
 
-Surya Jamuna Rani Subramanian & Govindharajulu Ramachandran
+Surya Jamuna Rani Subramaniyan (S3664414) & Govindharajulu Ramachandran (S3582361)
+
