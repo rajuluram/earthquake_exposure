@@ -22,8 +22,15 @@ cd earthquake_exposure
 ### 2. Install dependencies
 
 First, install Poetry if you don't have it:
+
+**Linux / macOS / Bash:**
 ```bash
 curl -sSL https://install.python-poetry.org | python3 -
+```
+
+**Windows (PowerShell):**
+```powershell
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | py -
 ```
 
 Then install the project packages:
